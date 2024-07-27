@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    background: url('aff.jpg')no-repeat center center fixed;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.butterflies,
+.balloons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.butterfly,
+.balloon {
+    position: absolute;
+    will-change: transform;
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+    }
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(100vh);
+    }
+    100% {
+        transform: translateY(-100vh);
+    }
+}
+
+.butterfly {
+    animation: fly 10s linear infinite;
+}
+
+.balloon {
+    animation: rise 7s linear infinite;
+}
+
+.butterfly img,
+.balloon img {
+    width: 50px;
+    height: 50px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Birthday, Hamdan hamduuu bete!</h1>
+        <p>May your day be filled with joy and laughter!</p>
+        <div class="butterflies"></div>
+        <div class="balloons"></div>
+    </div>
+    <script>
+        const container = document.querySelector('.butterflies');
+const balloonContainer = document.querySelector('.balloons');
+
+for (let i = 0; i < 20; i++) {
+    const butterfly = document.createElement('div');
+    butterfly.classList.add('butterfly');
+    butterfly.style.left = `${Math.random() * 100}vw`;
+    butterfly.style.animationDuration = `${Math.random() * 5 + 5}s`;
+    butterfly.innerHTML = '<img src="7.png" alt="Butterfly">';
+    container.appendChild(butterfly);
+}
+for (let i = 0; i < 30; i++) {
+    const butterfly = document.createElement('div');
+    butterfly.classList.add('butterfly');
+    butterfly.style.left = `${Math.random() * 100}vw`;
+    butterfly.style.animationDuration = `${Math.random() * 5 + 5}s`;
+    butterfly.innerHTML = '<img src="8.png" alt="Butterfly">';
+    container.appendChild(butterfly);
+}
+
+for (let i = 0; i < 40; i++) {
+    const balloon = document.createElement('div');
+    balloon.classList.add('balloon');
+    balloon.style.left = `${Math.random() * 100}vw`;
+    balloon.style.animationDuration = `${Math.random() * 5 + 5}s`;
+    balloon.innerHTML = '<img src="7.png" alt="Balloon">';
+    balloonContainer.appendChild(balloon);
+}
+for (let i = 0; i < 10; i++) {
+    const balloon = document.createElement('div');
+    balloon.classList.add('balloon');
+    balloon.style.left = `${Math.random() * 100}vw`;
+    balloon.style.animationDuration = `${Math.random() * 5 + 5}s`;
+    balloon.innerHTML = '<img src="01.png" alt="Balloon">';
+    balloonContainer.appendChild(balloon);
+}
+
+    </script>
+</body>
+</html>
